@@ -1,0 +1,717 @@
+{
+  "name": "核废水之夜",
+  "missionName": "核废水之夜",
+  "clueGroup": [
+    {
+      "group": "场景",
+      "clues": [
+        "*场景一",
+        "*场景二",
+        "*场景三"
+      ],
+      "maxClueCount": 1
+    }
+  ],
+  "startClues": [
+    "*场景一"
+  ],
+  "cutscene": [
+    {
+      "type": "text",
+      "desc": "结局一过场动画",
+      "preClue": [
+        "@通关-结局一"
+      ]
+    },
+    {
+      "type": "text",
+      "desc": "结局二过场动画",
+      "preClue": [
+        "@通关-结局二"
+      ],
+      "clue": [
+        "@成就?name=结局二成就"
+      ]
+    },
+    {
+      "type": "text",
+      "desc": "失败过场动画",
+      "preClue": [
+        "@失败-1"
+      ]
+    }
+  ],
+  "achievement": [
+    {
+      "name": "结局二成就",
+      "desc": "结局二成就描述"
+    }
+  ],
+  "nodes": [
+    {
+      "type": "item",
+      "name": "辐岛之夜",
+      "_id": 13,
+      "desc": "深处的不安，绝望的沉默，畸变的城市，你是因何来此，那么...准备好了么？（密码错误可以试试镜像输入）",
+      "nodes": [
+        {
+          "type": "item",
+          "name": "旅行者",
+          "_id": 14,
+          "interact": [
+            {
+              "type": "click",
+              "clue": [
+                "*旅行者",
+                "#开始"
+              ]
+            }
+          ],
+          "data": {},
+          "desc": "无目的到此的旅行者，漩涡中的一滴水，风暴中的一片云，灾难中的...普通人"
+        },
+        {
+          "type": "item",
+          "name": "本地人",
+          "_id": 15,
+          "interact": [
+            {
+              "type": "click",
+              "clue": [
+                "*本地人",
+                "#开始"
+              ]
+            }
+          ],
+          "desc": "你知道将要发生什么......真的么？又或者你是其中一员加害者？"
+        },
+        {
+          "type": "item",
+          "name": "商人",
+          "_id": 16,
+          "interact": [
+            {
+              "type": "click",
+              "clue": [
+                "*商人",
+                "#开始"
+              ]
+            }
+          ],
+          "desc": "这里或许将有危机，又或者是机会，你会选择冒着上绞刑架的风险吗？"
+        },
+        {
+          "type": "item",
+          "name": "大学教授",
+          "_id": 17,
+          "interact": [
+            {
+              "type": "click",
+              "clue": [
+                "*大学教授",
+                "#开始"
+              ]
+            }
+          ],
+          "desc": "密斯卡托米克大学生物学教授，和自己的学生来此考察"
+        }
+      ],
+      "scenes": [
+        "*场景一"
+      ],
+      "data": {
+        "removeIfClue": "#开始"
+      }
+    },
+    {
+      "type": "item",
+      "name": "旅行者",
+      "_id": 18,
+      "scenes": [
+        "*旅行者"
+      ],
+      "desc": "直通辐岛的飞机，现在该下去了，假期，海鲜，海岸的阳光在向你招手",
+      "nodes": [
+        {
+          "type": "item",
+          "name": "下飞机",
+          "_id": 22,
+          "interact": [
+            {
+              "type": "click",
+              "clue": [
+                "#辐岛"
+              ]
+            }
+          ],
+          "data": {
+            "removeIfClue": "#辐岛"
+          },
+          "desc": "空气中似乎有淡淡的咸腥味，不太正常，像是死鱼的味道，好在不刺鼻"
+        },
+        {
+          "type": "backpack",
+          "name": "旅行背包",
+          "data": {
+            "backpackKey": "背包1"
+          },
+          "_id": 34,
+          "nodes": [
+            {
+              "type": "item",
+              "name": "两瓶矿泉水",
+              "_id": 44,
+              "data": {
+                "stealthUntilClue": "#打开的背包",
+                "independent": true
+              },
+              "desc": "你从国内带来的",
+              "state": [
+                {
+                  "name": "一瓶矿泉水",
+                  "preClue": [
+                    "#喝水了"
+                  ],
+                  "canReuse": false,
+                  "noRefreshState": false
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "name": "一些食物",
+              "_id": 45,
+              "data": {
+                "stealthUntilClue": "#打开的背包",
+                "independent": true
+              },
+              "desc": "三个罐头，水果，鱼，牛肉"
+            },
+            {
+              "type": "item",
+              "name": "瑞士军刀",
+              "_id": 46,
+              "data": {
+                "stealthUntilClue": "#打开的背包",
+                "independent": true
+              },
+              "desc": "基本的切，锉，锯，剪"
+            },
+            {
+              "type": "item",
+              "name": "背包的密码锁",
+              "_id": 35,
+              "nodes": [
+                {
+                  "type": "password",
+                  "name": "0",
+                  "data": {
+                    "options": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9"
+                    ],
+                    "clue": "#背包密码1-{0}"
+                  },
+                  "_id": 36
+                },
+                {
+                  "type": "password",
+                  "name": "0",
+                  "data": {
+                    "options": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9"
+                    ],
+                    "clue": "#背包密码2-{0}"
+                  },
+                  "_id": 38
+                },
+                {
+                  "type": "password",
+                  "name": "0",
+                  "data": {
+                    "options": [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9"
+                    ],
+                    "clue": "#背包密码3-{0}"
+                  },
+                  "_id": 43
+                }
+              ],
+              "interact": [
+                {
+                  "type": "click",
+                  "clue": [
+                    "#打开的背包"
+                  ],
+                  "preClue": [
+                    "#背包密码1-8",
+                    "#背包密码2-2",
+                    "#背包密码3-4"
+                  ]
+                }
+              ],
+              "data": {
+                "removeIfClue": "#打开的背包"
+              }
+            }
+          ],
+          "desc": "你的旅行背包，你准备了一点物资，你记得密码是824"
+        },
+        {
+          "type": "item",
+          "name": "去旅馆",
+          "_id": 47,
+          "interact": [
+            {
+              "type": "click",
+              "clue": [
+                "#酒店"
+              ]
+            }
+          ],
+          "data": {
+            "stealthUntilClue": "#辐岛",
+            "removeIfClue": "#酒店"
+          },
+          "desc": "你提前订的旅馆，价格超出预料的很便宜"
+        },
+        {
+          "type": "item",
+          "name": "旅馆",
+          "_id": 48,
+          "data": {
+            "stealthUntilClue": "#酒店",
+            "removeIfClue": "#离开旅馆"
+          },
+          "nodes": [
+            {
+              "type": "item",
+              "name": "离开旅馆",
+              "_id": 68,
+              "interact": [
+                {
+                  "type": "click",
+                  "clue": [
+                    "#离开旅馆"
+                  ]
+                }
+              ],
+              "data": {
+                "stealthUntilClue": "#旅行者的第二天"
+              },
+              "desc": "离开这里吧"
+            },
+            {
+              "type": "item",
+              "name": "床",
+              "_id": 50,
+              "nodes": [
+                {
+                  "type": "item",
+                  "name": "检查床",
+                  "_id": 54,
+                  "interact": [
+                    {
+                      "type": "click",
+                      "clue": [
+                        "#仔细搜索床"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "name": "文本节点",
+                  "data": {
+                    "text": {
+                      "title": "标题",
+                      "content": "我要被淹死了！现在是什么时候？丑夜三刻",
+                      "name": "溺水者"
+                    },
+                    "stealthUntilClue": "#仔细搜索床"
+                  },
+                  "_id": 57
+                },
+                {
+                  "type": "item",
+                  "name": "睡觉",
+                  "_id": 56,
+                  "desc": "快点睡觉吧，剩下的明天再说",
+                  "interact": [
+                    {
+                      "type": "click",
+                      "clue": [
+                        "#旅行者的第二天"
+                      ],
+                      "params": {
+                        "isOnce": true
+                      }
+                    }
+                  ]
+                }
+              ],
+              "desc": "柔软整洁，似乎那里有什么东西？"
+            },
+            {
+              "type": "item",
+              "name": "电视",
+              "_id": 49,
+              "desc": "正在直播排放核废水，信号似乎不好的样子"
+            },
+            {
+              "type": "item",
+              "name": "卫生间",
+              "_id": 51,
+              "nodes": [
+                {
+                  "type": "item",
+                  "name": "马桶",
+                  "_id": 53,
+                  "state": [
+                    {
+                      "name": "马桶形状的怪物",
+                      "desc": "这是...什么...?",
+                      "preClue": [
+                        "#辐射"
+                      ],
+                      "canReuse": false,
+                      "noRefreshState": false
+                    },
+                    {
+                      "name": "马桶",
+                      "preClue": [
+                        "#喝水了"
+                      ],
+                      "canReuse": false,
+                      "noRefreshState": false
+                    }
+                  ],
+                  "interact": [
+                    {
+                      "type": "click",
+                      "desc": "我好渴",
+                      "preClue": [
+                        "#辐射"
+                      ]
+                    },
+                    {
+                      "type": "use",
+                      "clue": [
+                        "#喝水了"
+                      ],
+                      "target": [
+                        "两瓶矿泉水"
+                      ],
+                      "params": {}
+                    }
+                  ],
+                  "nodes": [
+                    {
+                      "type": "item",
+                      "name": "湿润的皮质背包",
+                      "_id": 58,
+                      "data": {
+                        "stealthUntilClue": "#喝水了"
+                      },
+                      "interact": [
+                        {
+                          "type": "use",
+                          "clue": [
+                            "#打开的皮质背包"
+                          ],
+                          "target": [
+                            "瑞士军刀"
+                          ],
+                          "params": {}
+                        }
+                      ],
+                      "nodes": [
+                        {
+                          "type": "item",
+                          "name": "金属盒子",
+                          "_id": 60,
+                          "state": [],
+                          "data": {
+                            "stealthUntilClue": "#打开的皮质背包"
+                          },
+                          "nodes": [
+                            {
+                              "type": "item",
+                              "name": "一条死鱼",
+                              "_id": 65,
+                              "data": {
+                                "stealthUntilClue": "#打开的金属盒子",
+                                "independent": true
+                              },
+                              "desc": "这条鱼有不止一个眼睛"
+                            },
+                            {
+                              "type": "image",
+                              "name": "图片节点",
+                              "data": {
+                                "image": "image/屏幕截图 2023-09-10 144803.png",
+                                "stealthUntilClue": "#打开的金属盒子"
+                              },
+                              "_id": 75
+                            },
+                            {
+                              "type": "item",
+                              "name": "密码锁",
+                              "_id": 61,
+                              "nodes": [
+                                {
+                                  "type": "password",
+                                  "name": "0",
+                                  "data": {
+                                    "options": [
+                                      "0",
+                                      "1",
+                                      "2",
+                                      "3",
+                                      "4",
+                                      "5",
+                                      "6",
+                                      "7",
+                                      "8",
+                                      "9"
+                                    ],
+                                    "clue": "#金属盒子3-{0}"
+                                  },
+                                  "_id": 64
+                                },
+                                {
+                                  "type": "password",
+                                  "name": "0",
+                                  "data": {
+                                    "options": [
+                                      "0",
+                                      "1",
+                                      "2",
+                                      "3",
+                                      "4",
+                                      "5",
+                                      "6",
+                                      "7",
+                                      "8",
+                                      "9"
+                                    ],
+                                    "clue": "#金属盒子2-{0}"
+                                  },
+                                  "_id": 63
+                                },
+                                {
+                                  "type": "password",
+                                  "name": "0",
+                                  "data": {
+                                    "options": [
+                                      "0",
+                                      "1",
+                                      "2",
+                                      "3",
+                                      "4",
+                                      "5",
+                                      "6",
+                                      "7",
+                                      "8",
+                                      "9"
+                                    ],
+                                    "clue": "#金属盒子1-{0}"
+                                  },
+                                  "_id": 62
+                                }
+                              ],
+                              "interact": [
+                                {
+                                  "type": "click",
+                                  "clue": [
+                                    "#打开的金属盒子"
+                                  ],
+                                  "preClue": [
+                                    "#金属盒子1-1",
+                                    "#金属盒子2-4",
+                                    "#金属盒子3-5"
+                                  ],
+                                  "params": {
+                                    "isOnce": true
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "item",
+                          "name": "摄像机",
+                          "_id": 59,
+                          "data": {
+                            "stealthUntilClue": "#打开的皮质背包",
+                            "independent": true
+                          }
+                        }
+                      ],
+                      "state": [
+                        {
+                          "name": "打开的皮质背包",
+                          "preClue": [
+                            "#打开的皮质背包"
+                          ],
+                          "canReuse": false,
+                          "noRefreshState": false
+                        }
+                      ]
+                    }
+                  ],
+                  "desc": "普普通通的马桶"
+                },
+                {
+                  "type": "item",
+                  "name": "淋浴",
+                  "_id": 52,
+                  "interact": [
+                    {
+                      "type": "click",
+                      "clue": [
+                        "#辐射"
+                      ]
+                    }
+                  ],
+                  "data": {
+                    "removeIfClue": "#辐射"
+                  }
+                }
+              ]
+            }
+          ],
+          "desc": "三四层的样子看起来还算正规"
+        },
+        {
+          "type": "item",
+          "name": "选择",
+          "_id": 69,
+          "nodes": [
+            {
+              "type": "item",
+              "name": "留下来",
+              "_id": 70,
+              "state": [],
+              "data": {},
+              "interact": [],
+              "nodes": [
+                {
+                  "type": "item",
+                  "name": "继续度假",
+                  "_id": 74,
+                  "interact": [
+                    {
+                      "type": "click",
+                      "clue": [
+                        "@失败-海岸海中的亡魂"
+                      ]
+                    }
+                  ],
+                  "data": {
+                    "removeIfClue": "#打开的金属盒子"
+                  }
+                },
+                {
+                  "type": "item",
+                  "name": "调查真相",
+                  "_id": 73,
+                  "data": {
+                    "stealthUntilClue": "#打开的金属盒子"
+                  },
+                  "interact": [
+                    {
+                      "type": "click",
+                      "clue": [
+                        "#调查真相的旅行者调查员"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "item",
+              "name": "立刻离开",
+              "_id": 71,
+              "interact": [
+                {
+                  "type": "click",
+                  "desc": "恭喜，你活下来了",
+                  "clue": [
+                    "@通关-treavel end"
+                  ]
+                }
+              ]
+            }
+          ],
+          "data": {
+            "stealthUntilClue": "#离开旅馆"
+          }
+        }
+      ],
+      "state": [
+        {
+          "name": "辐岛之旅",
+          "preClue": [
+            "#辐岛"
+          ],
+          "canReuse": false,
+          "noRefreshState": false
+        }
+      ]
+    },
+    {
+      "type": "item",
+      "name": "本地人",
+      "_id": 19,
+      "interact": [],
+      "scenes": [
+        "*本地人"
+      ]
+    },
+    {
+      "type": "item",
+      "name": "商人",
+      "_id": 20,
+      "scenes": [
+        "*商人"
+      ]
+    },
+    {
+      "type": "item",
+      "name": "大学教授",
+      "_id": 21,
+      "scenes": [
+        "*大学教授"
+      ]
+    }
+  ]
+}
